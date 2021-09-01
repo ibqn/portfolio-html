@@ -253,7 +253,7 @@ body {
   }
 }
 
-.featured-work {
+.featured-works {
   width: 100%;
   // background-color: #edf7fa;
 
@@ -277,5 +277,9 @@ body {
       font-size: 22px;
       line-height: 60/22 * 100%;
     }
+  }
+
+  &__list {
+    display: flex;
   }
 }
