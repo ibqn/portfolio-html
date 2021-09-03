@@ -361,3 +361,56 @@ body {
     }
   }
 }
+
+.footer {
+  margin: 20px 0 0 0;
+  font-size: 12px;
+  background-color: #fafbfc;
+
+  &__container {
+    max-width: 856px;
+
+    min-height: 80px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__social {
+    list-style: none;
+    display: flex;
+  }
+
+  &__icon {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      fill: var(--dark-color);
+    }
+  }
+
+  .twitter-icon {
+    // fill: #586069;
+  }
+}
