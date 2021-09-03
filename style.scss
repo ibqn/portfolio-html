@@ -241,7 +241,6 @@ body {
         font-weight: normal;
         line-height: 26/18 * 100%;
         display: flex;
-        margin-bottom: 19px;
         align-items: center;
         flex-direction: row;
         margin: 24px 21px 19px 23px;
@@ -268,7 +267,6 @@ body {
 
 .featured-works {
   width: 100%;
-  // background-color: #edf7fa;
 
   &__container {
     max-width: 856px;
@@ -369,7 +367,6 @@ body {
 
   &__container {
     max-width: 856px;
-
     min-height: 80px;
 
     margin: 0 auto;
@@ -408,9 +405,5 @@ body {
     svg {
       fill: var(--dark-color);
     }
-  }
-
-  .twitter-icon {
-    // fill: #586069;
   }
 }
