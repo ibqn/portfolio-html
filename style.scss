@@ -1,3 +1,10 @@
+@use "sass:math";
+
+$containerWidth: 856;
+$padding: 40;
+
+$md1: $containerWidth + $padding;
+
 :root {
   --primary-color: #ff6464;
   --secondary-color: #00a8cc;
@@ -112,7 +119,7 @@ body {
   width: 100%;
 
   &__container {
-    max-width: 856px;
+    max-width: $containerWidth + 0px;
     min-height: 500px;
 
     display: grid;
@@ -121,6 +128,12 @@ body {
     align-items: center;
     justify-items: self-end;
     margin: 0 auto;
+
+    @media (max-width: $md1 + 0px) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      margin-bottom: 70px;
+    }
   }
 
   &__section {
@@ -130,20 +143,38 @@ body {
     align-items: flex-start;
     color: var(--dark-color);
 
+    @media (max-width: $md1 + 0px) {
+      order: 2;
+      align-items: center;
+    }
+
     h1 {
       font-weight: bold;
       font-style: normal;
       font-size: 44px;
-      line-height: 60/44 * 100%;
+      line-height: math.div(60, 44) * 100%;
       margin-bottom: 40px;
+
+      @media (max-width: $md1 + px) {
+        text-align: center;
+        font-size: 32px;
+        line-height: math.div(40, 32) * 100%;
+      }
     }
 
     p {
       font-weight: normal;
       font-style: normal;
       font-size: 16px;
-      line-height: 23/16 * 100%;
+      line-height: math.div(23, 16) * 100%;
       margin-bottom: 40px;
+
+      @media (max-width: $md1 + px) {
+        text-align: center;
+        font-size: 16px;
+        line-height: math.div(23, 16) * 100%;
+        margin: 0 24px 40px;
+      }
     }
 
     button {
@@ -154,7 +185,7 @@ body {
       font-weight: 500;
       font-size: 20px;
       padding: 10px 40px;
-      line-height: 29/20 * 100%;
+      line-height: math.div(29, 20) * 100%;
 
       color: #ffffff;
       border-radius: 2px;
@@ -168,10 +199,22 @@ body {
     }
   }
 
+  &__illustration {
+    @media (max-width: $md1 + 0px) {
+      justify-self: center;
+    }
+  }
+
   &__image {
-    width: 243px;
-    height: 243px;
+    --image-size: 243px;
+    width: var(--image-size);
+    height: var(--image-size);
     position: relative;
+
+    @media (max-width: $md1 + 0px) {
+      --image-size: 170px;
+      margin: 80px 0 40px 0;
+    }
 
     img {
       border-radius: 50%;
@@ -187,8 +230,8 @@ body {
     position: absolute;
     top: 13px;
     right: 5px;
-    width: 243px;
-    height: 243px;
+    width: var(--image-size);
+    height: var(--image-size);
     border-radius: 50%;
     background: #edf7fa;
   }
@@ -199,7 +242,7 @@ body {
   background-color: #edf7fa;
 
   &__container {
-    max-width: 856px;
+    max-width: $containerWidth + 0px;
     min-height: 400px;
 
     margin: 0 auto;
@@ -212,18 +255,30 @@ body {
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width: $md1 + 0px) {
+      justify-content: center;
+    }
+
     h3 {
       font-style: normal;
       font-weight: normal;
       font-size: 22px;
-      line-height: 60/22 * 100%;
+      line-height: math.div(60, 22) * 100%;
+
+      @media (max-width: $md1 + 0px) {
+        font-size: 18px;
+      }
     }
 
     span {
       font-size: 16px;
-      line-height: 23/16 * 100%;
+      line-height: math.div(23, 16) * 100%;
 
       color: var(--secondary-color);
+
+      @media (max-width: $md1 + 0px) {
+        display: none;
+      }
     }
   }
 
@@ -231,12 +286,22 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 418px);
     column-gap: 20px;
+
+    @media (max-width: $md1 + 0px) {
+      grid-template-columns: 1fr;
+      row-gap: 18px;
+      padding-bottom: 38px;
+    }
   }
 
   &__item {
-    height: 295px;
+    // height: 295px;
     background-color: #ffffff;
     border-radius: 4px;
+
+    @media (max-width: $md1 + 0px) {
+      margin: 0 11px;
+    }
 
     .recent-post {
       padding: 23px;
@@ -245,19 +310,31 @@ body {
         font-size: 26px;
         font-style: normal;
         font-weight: bold;
-        line-height: 38/26 * 100%;
+        line-height: math.div(38, 26) * 100%;
         margin: 24px 21px 26px 23px;
+
+        @media (max-width: $md1 + 0px) {
+          font-size: 22px;
+          line-height: math.div(30, 22) * 100%;
+          text-align: center;
+        }
       }
 
       &__info {
         font-size: 18px;
         font-style: normal;
         font-weight: normal;
-        line-height: 26/18 * 100%;
+        line-height: math.div(26, 18) * 100%;
         display: flex;
         align-items: center;
         flex-direction: row;
         margin: 24px 21px 19px 23px;
+
+        @media (max-width: $md1 + 0px) {
+          font-size: 18px;
+          line-height: math.div(26, 18) * 100%;
+          justify-content: center;
+        }
 
         .separator {
           width: 1px;
@@ -273,7 +350,7 @@ body {
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 23/16 * 100%;
+        line-height: math.div(23, 16) * 100%;
       }
     }
   }
@@ -299,7 +376,7 @@ body {
       font-style: normal;
       font-weight: normal;
       font-size: 22px;
-      line-height: 60/22 * 100%;
+      line-height: math.div(60, 22) * 100%;
     }
   }
 
@@ -338,7 +415,7 @@ body {
         font-style: normal;
         font-weight: bold;
         font-size: 30px;
-        line-height: 44/30 * 100%;
+        line-height: math.div(44, 30) * 100%;
         margin-bottom: 16px;
       }
 
@@ -368,7 +445,7 @@ body {
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
-        line-height: 23/16 * 100%;
+        line-height: math.div(23, 16) * 100%;
       }
     }
   }
