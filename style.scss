@@ -243,9 +243,9 @@ body {
 
   &__container {
     max-width: $containerWidth + 0px;
-    min-height: 400px;
 
     margin: 0 auto;
+    padding-bottom: 48px;
   }
 
   &__header {
@@ -295,8 +295,8 @@ body {
   }
 
   &__item {
-    // height: 295px;
     background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
     border-radius: 4px;
 
     @media (max-width: $md1 + 0px) {
@@ -360,7 +360,7 @@ body {
   width: 100%;
 
   &__container {
-    max-width: 856px;
+    max-width: $containerWidth + 0px;
     min-height: 400px;
     margin: 0 auto;
   }
