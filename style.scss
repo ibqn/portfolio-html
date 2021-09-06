@@ -466,11 +466,21 @@ body {
     justify-content: space-between;
     justify-self: center;
     align-items: center;
+
+    @media (max-width: $md1 + 0px) {
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 20px;
+    }
   }
 
   &__menu {
     display: flex;
     list-style: none;
+
+    @media (max-width: $md1 + 0px) {
+      order: 2;
+    }
   }
 
   &__item {
