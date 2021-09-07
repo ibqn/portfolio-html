@@ -67,50 +67,102 @@ body {
   }
 
   &__container {
-    max-width: 1032px;
+    max-width: 1012px;
     min-height: 80px;
 
+    padding: 0 20px;
     margin: 0 auto;
 
     display: flex;
     // justify-content: flex-end;
     justify-content: space-between;
     align-items: center;
+  }
 
-    .icon__menu {
-      display: none;
+  &__menu-icon {
+    display: none;
+    cursor: pointer;
+    height: 18px;
+    width: 30px;
+    position: relative;
+
+    @media (max-width: $md1 + 0px) {
+      display: block;
     }
 
-    .menu__main {
-      font-family: 'Heebo', sans-serif;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-
-      .menu__list {
-        display: flex;
-        list-style: none;
-
-        .menu__item {
-          margin-right: 33px;
-
-          &:last-of-type {
-            margin-right: 0;
-          }
-
-          .menu__link {
-            text-decoration: none;
-            color: black;
-
-            transition: color 0.3s ease 0s, border 0.3s ease 0s;
-
-            &:hover {
-              color: var(--primary-color);
-              border-bottom: 1px solid var(--primary-color);
-            }
-          }
-        }
+    &:hover {
+      span:nth-child(1) {
+        top: 50%;
+        transform: translate(0px, -50%) rotate(45deg);
       }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        bottom: 50%;
+        transform: translate(0px, 50%) rotate(-45deg);
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      background-color: #21243d;
+      height: 10%;
+      border-radius: 1px;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translate(0px, -50%);
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__menu {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+
+    @media (max-width: $md1 + 0px) {
+      position: absolute;
+      top: 0;
+      left: -200%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 33px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: black;
+
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--primary-color);
     }
   }
 }
